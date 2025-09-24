@@ -1,4 +1,4 @@
-// lib/firebase.ts
+// lib/firebase.ts (already in your repo)
 import Constants from "expo-constants";
 import { getApp, getApps, initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -14,7 +14,5 @@ const firebaseConfig = {
   appId: extra.FIREBASE_APP_ID,
 };
 
-// ✅ only initialize if no apps yet
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-
 export const db = getFirestore(app);
